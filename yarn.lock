@@ -554,11 +554,6 @@ make-dir@^3.0.2:
   dependencies:
     semver "^6.0.0"
 
-mathjax@3:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/mathjax/-/mathjax-3.1.2.tgz#95c0d45ce2330ef7b6a815cebe7d61ecc26bbabd"
-  integrity sha512-BojKspBv4nNWzO1wC6VEI+g9gHDOhkaGHGgLxXkasdU4pwjdO5AXD5M/wcLPkXYPjZ/N+6sU8rjQTlyvN2cWiQ==
-
 merge-stream@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/merge-stream/-/merge-stream-2.0.0.tgz#52823629a14dd00c9770fb6ad47dc6310f2c1f60"
