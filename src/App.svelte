@@ -43,7 +43,7 @@
 
   @media (min-width: 640px) {
     main {
-      max-width: none;
+      max-width: 1200px;
     }
     h1 {
       font-size: 4em;
