@@ -14,7 +14,7 @@
           },
           ticks: {
             fontFamily: "Montserrat",
-            stepSize: 10000000,
+            stepSize: 500_000,
           },
         },
       ],
