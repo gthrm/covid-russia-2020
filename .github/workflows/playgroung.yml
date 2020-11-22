@@ -1,25 +1,29 @@
-name: Node.js CI
+name: github pages
+
 on:
   push:
     branches:
-      - main
+      - main  # Set a branch name to trigger deployment
 
 jobs:
-  build-test-deploy:
-    runs-on: ubuntu-latest
+  deploy:
+    runs-on: ubuntu-18.04
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Set-up Node
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
         with:
-          node-version: "10.x"
-      - run: npm install
-      - run: npm run build
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.74.3'
+
+      - name: Build
+        run: hugo --minify
+
       - name: Deploy
-        uses: crazy-max/ghaction-github-pages@v2
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          target_branch: gh-pages
-          build_dir: public
-        env:
-          GITHUB_TOKEN: ${{ secrets.DEPLOY }}
+          github_token: ${{ secrets.DEPLOY }}
+          publish_dir: ./public
